@@ -1,10 +1,6 @@
-// @screens/withRedux.js
-// import ErrorBoundary from '@containers/ErrorBoundries';
 import React, {createRef, PureComponent, Suspense} from 'react';
 import {ActivityIndicator, View, StatusBar} from 'react-native';
 import {Provider} from 'react-redux';
-// import OfflineNotice from '@components/common/OfflineNotice';
-// import SplashScreen from 'react-native-splash-screen';
 import hoistStatics from 'hoist-non-react-statics';
 
 // Context lets us pass a value deep into the component tree
@@ -53,7 +49,6 @@ const withRedux = store => WrappedComponent => () => {
       return (
         <Provider store={store}>
           <ThemeContext.Provider value="dark">
-            {/* <ErrorBoundary> */}
             <Suspense
               fallback={
                 <View
@@ -65,10 +60,8 @@ const withRedux = store => WrappedComponent => () => {
                   <ActivityIndicator />
                 </View>
               }>
-              {/* <OfflineNotice offlineText="You are not connected to Internet" /> */}
               <WrappedComponent ref={this.props.forwardedRef} {...this.props} />
             </Suspense>
-            {/* </ErrorBoundary> */}
           </ThemeContext.Provider>
         </Provider>
       );

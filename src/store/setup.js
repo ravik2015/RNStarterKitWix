@@ -24,12 +24,6 @@ export default function setup() {
     window.store = store;
   }
   persistStore(store, {whitelist, storage: AsyncStorage}, () => {
-    // // on app loading the persit store loads and we have route from here
-    // // startApp(store.getState().app.root);
-    // let isLoggedIn = store.getState().authReducer.isLoggedIn;
-    // // goToAuth();
-    // if (isLoggedIn) goHome();
-    // else goToAuth();
     goToAuth();
   });
   storeObj.store = store;

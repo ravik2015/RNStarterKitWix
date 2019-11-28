@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators, compose} from 'redux';
 import {goHome, goToAuth} from '../../../config/navigation';
 
-const SignIn = lazy(() => import('../../../components/auth/SignIn'));
+const SignIn = lazy(() => import('../../../components/Auth/SignInComponent'));
 
 class SignInContainer extends Component {
   // Assign a contextType to read the current theme context.

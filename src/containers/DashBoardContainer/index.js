@@ -7,6 +7,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {manageComponentStats} from '../../actions/componentStats';
 
+const Dashboard = lazy(() => import('../../components/DashboardComponent'));
+
 class DashBoardContainer extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ class DashBoardContainer extends Component {
   render() {
     return (
       <View style={Styles.homeContainer}>
-        <Text>Dashboard</Text>
+        <Dashboard />
       </View>
     );
   }

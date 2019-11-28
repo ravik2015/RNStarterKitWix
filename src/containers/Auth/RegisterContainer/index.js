@@ -9,6 +9,10 @@ import {connect} from 'react-redux';
 import {bindActionCreators, compose} from 'redux';
 import {goHome, goToAuth} from '@config/navigation';
 
+const Register = lazy(() =>
+  import('../../../components/Auth/RegisterComponent'),
+);
+
 class RegisterContainer extends Component {
   // Assign a contextType to read the current theme context.
   // React will find the closest theme Provider above and use its value.
@@ -39,7 +43,7 @@ class RegisterContainer extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>SignUp</Text>
+        <Register/>
       </View>
     );
   }
