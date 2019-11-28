@@ -7,9 +7,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {manageComponentStats} from '../../actions/componentStats';
 
-const Dashboard = lazy(() => import('../../components/DashboardComponent'));
+const Dashboard = lazy(() => import('../../components/Dashboard'));
 
-class DashBoardContainer extends Component {
+class DashBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -40,7 +40,7 @@ const mapDispatchToProps = dispatch => ({
   manageComponentStats: bindActionCreators(manageComponentStats, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashBoardContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(DashBoard);
 
 const Styles = StyleSheet.create({
   homeContainer: {

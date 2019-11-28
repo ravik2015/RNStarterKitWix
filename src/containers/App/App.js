@@ -7,7 +7,7 @@ import {ActivityIndicator, StyleSheet, View} from 'react-native';
 interface Props {}
 interface State {}
 
-export default class AppContainer extends Component<Props, State> {
+export default class App extends Component<Props, State> {
   componentWillUnmount() {}
   render() {
     return (

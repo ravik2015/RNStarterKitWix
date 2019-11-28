@@ -2,11 +2,11 @@
 import withRedux from '../../hoc/withRedux';
 import {lazy} from 'react';
 import {Navigation} from 'react-native-navigation';
-import Loader from '../../containers/AppContainer';
+import Loader from '../../containers/App';
 
-const SignIn = lazy(() => import('../../containers/Auth/SignInContainer'));
-const Register = lazy(() => import('../../containers/Auth/RegisterContainer'));
-const DashBoard = lazy(() => import('../../containers/DashBoardContainer'));
+const SignIn = lazy(() => import('../../containers/Auth/SignIn'));
+const Register = lazy(() => import('../../containers/Auth/Register'));
+const DashBoard = lazy(() => import('../../containers/DashBoard'));
 
 export const registerScreens = (store, Provider) => {
   const withReduxStore = withRedux(store);
