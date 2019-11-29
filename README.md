@@ -36,3 +36,12 @@ Or, if you prefer Android:
 ```
 yarn run:android
 ```
+
+#### 3. Rename project name
+```
+yarn global add react-native-rename
+```
+```
+react-native-rename <newName>
+```
+
