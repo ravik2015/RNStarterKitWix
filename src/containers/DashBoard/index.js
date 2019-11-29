@@ -2,17 +2,18 @@
 import AppActions from '../../actions/appActions';
 import Constants from '../../constants';
 import React, {Component, lazy} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, ScrollView} from 'react-native';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {manageComponentStats} from '../../actions/componentStats';
+import withLoadingScreen from './../../hoc/withLoadingScreen';
 
 const Dashboard = lazy(() => import('../../components/Dashboard'));
 
 class DashBoard extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {isLoading: true};
   }
   componentDidMount() {
     this.props.manageComponentStats(
@@ -40,13 +41,15 @@ const mapDispatchToProps = dispatch => ({
   manageComponentStats: bindActionCreators(manageComponentStats, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DashBoard);
+const MyDash = withLoadingScreen('small')(DashBoard); // Using a common HOC for loading component
+export default connect(mapStateToProps, mapDispatchToProps)(MyDash);
 
 const Styles = StyleSheet.create({
   homeContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'red',
   },
   homeView: {flex: 0.8, justifyContent: 'center', alignItems: 'center'},
   headerTitleContainer: {
